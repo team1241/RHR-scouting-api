@@ -6,6 +6,7 @@ import { pinoLogger } from "~/middleware/pino-logger.js";
 
 export default function createApp() {
   const app = new OpenAPIHono<AppBindings>({ strict: false });
+  // Attach middleware here
   app.use(serveEmojiFavicon("📊"));
   app.use(requestId());
   app.use(pinoLogger());
