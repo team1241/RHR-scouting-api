@@ -14,6 +14,7 @@ export default function configureOpenAPI(app: OpenAPIApp) {
   app.get("/api-reference", Scalar({
     url: "/api-doc",
     theme: "bluePlanet",
+    layout: "classic",
     pageTitle: "RHR Scouting API Reference",
     defaultHttpClient: {
       targetKey: "js",
