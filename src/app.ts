@@ -21,10 +21,13 @@ app.use(
   }),
 );
 
+// Integrates the OpenAPI documentation into the app
 configureOpenAPI(app);
 
+// creates an array of routes for each of the seasons
 const routers = [seasons];
 
+// Checks each route in the array and mounts them to the route URL
 routers.forEach((route) => {
   app.route("/", route);
 });
