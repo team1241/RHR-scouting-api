@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "module": "NodeNext",
+    "module": "ESNext",
+    "target": "es2022",
+    "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"],
-       "~": ["./src"]
+      "~/*": ["./src/*"]
     },
-    "resolveJsonModule": true,
     "types": [
       "node"
     ],
