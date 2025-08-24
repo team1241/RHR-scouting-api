@@ -2,8 +2,9 @@ import { unkey } from "@unkey/hono";
 import env from "~/env.js";
 import configureOpenAPI from "~/lib/configure-openapi.js";
 import createApp from "~/lib/create-app.js";
-import scouts from "~/routes/scouts/scouts.index.js";
-import seasons from "~/routes/seasons/seasons.index.js";
+import images from "~/routes/v1/images/images.index.js";
+import scouts from "~/routes/v1/scouts/scouts.index.js";
+import seasons from "~/routes/v1/seasons/seasons.index.js";
 
 const app = createApp();
 
@@ -32,10 +33,10 @@ app.use("*", unkey({
   },
 }));
 
-const routers = [seasons, scouts];
+const v1Routers = [seasons, scouts, images];
 
-routers.forEach((route) => {
-  app.route("/", route);
+v1Routers.forEach((route) => {
+  app.route("/v1", route);
 });
 
 export default app;

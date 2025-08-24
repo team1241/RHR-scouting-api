@@ -1,6 +1,6 @@
 import type { ScoutingAppRouteHandler } from "~/lib/types.js";
 
-import type { ListScoutsRoute } from "~/routes/scouts/scouts.routes.js";
+import type { ListScoutsRoute } from "~/routes/v1/scouts/scouts.routes.js";
 import * as HttpStatusCodes from "stoker/http-status-codes";
 import db from "~/db/index.js";
 
