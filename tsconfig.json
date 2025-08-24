@@ -4,8 +4,10 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "module": "NodeNext",
+    "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+       "~": ["./src"]
     },
     "resolveJsonModule": true,
     "types": [
