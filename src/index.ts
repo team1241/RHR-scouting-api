@@ -1,4 +1,5 @@
 import { serve } from "@hono/node-server";
+import {handle} from "@hono/node-server/vercel"
 import app from "~/app.js";
 import env from "~/env.js";
 
@@ -10,4 +11,4 @@ serve({
   console.log(`Server is running on http://localhost:${info.port}`);
 });
 
-export default app;
+export default handle(app);
