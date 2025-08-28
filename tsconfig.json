@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "nodenext",
-    "strict": true,
-    "skipLibCheck": true,
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "resolveJsonModule": true,
     "baseUrl": ".",
+    "module": "nodenext",
     "paths": {
       "~/*": ["./src/*"]
     },
+    "resolveJsonModule": true,
     "types": [
       "node"
     ],
+    "strict": true,
     "outDir": "./dist",
+    "skipLibCheck": true
   },
   "exclude": ["node_modules"]
 }
