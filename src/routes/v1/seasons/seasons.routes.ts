@@ -1,13 +1,11 @@
-
 import { createRoute, z } from "@hono/zod-openapi";
+import { notFoundSchema } from "src/lib/constants.js";
 import * as HttpStatusCodes from "stoker/http-status-codes";
 import { jsonContent } from "stoker/openapi/helpers";
-import { notFoundSchema } from "~/lib/constants.js";
-
 
 const tags = ["Seasons"];
 
-const SeasonSchema = z.object({id: z.number(), year: z.number(), gameName: z.string(), createdAt: z.string(), updatedAt: z.string(), isActive: z.boolean()})
+const SeasonSchema = z.object({ id: z.number(), year: z.number(), gameName: z.string(), createdAt: z.string(), updatedAt: z.string(), isActive: z.boolean() });
 
 export const listSeasons = createRoute({
   path: "/seasons",
@@ -19,7 +17,7 @@ export const listSeasons = createRoute({
       "List of seasons",
     ),
   },
-})
+});
 
 export type ListSeasonRoute = typeof listSeasons;
 
@@ -33,9 +31,9 @@ export const activeSeason = createRoute({
       "Current active season",
     ),
     [HttpStatusCodes.NOT_FOUND]: jsonContent(
-      notFoundSchema, 
-      'Active season not found'
-    )
+      notFoundSchema,
+      "Active season not found",
+    ),
   },
 });
 

@@ -1,10 +1,10 @@
 import { createRoute } from "@hono/zod-openapi";
+import { team } from "src/db/schema.js";
+import { notFoundSchema } from "src/lib/constants.js";
 import * as HttpStatusCodes from "stoker/http-status-codes";
 import { jsonContent } from "stoker/openapi/helpers";
 import { createErrorSchema, IdParamsSchema } from "stoker/openapi/schemas";
 import { z } from "zod";
-import { team } from "~/db/schema.js";
-import { notFoundSchema } from "~/lib/constants.js";
 
 const tags = ["Scouts"];
 

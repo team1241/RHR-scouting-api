@@ -1,4 +1,4 @@
-import type { AppBindings } from "~/lib/types.js";
+import type { AppBindings } from "src/lib/types.js";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { requestId } from "hono/request-id";
 import { notFound, onError, serveEmojiFavicon } from "stoker/middlewares";

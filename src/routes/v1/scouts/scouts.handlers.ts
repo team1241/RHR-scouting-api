@@ -1,13 +1,13 @@
-import type { ScoutingAppRouteHandler } from "~/lib/types.js";
+import type { ScoutingAppRouteHandler } from "src/lib/types.js";
 
-import type { ListCommentsForScoutRoute, ListScoutsRoute } from "~/routes/v1/scouts/scouts.routes.js";
+import type { ListCommentsForScoutRoute, ListScoutsRoute } from "src/routes/v1/scouts/scouts.routes.js";
 import { eq } from "drizzle-orm";
+import db from "src/db/index.js";
+import { matchComments, users } from "src/db/schema.js";
 import * as HttpStatusCodes from "stoker/http-status-codes";
-import db from "~/db/index.js";
-import { matchComments, users } from "~/db/schema.js";
 
-const getScoutById = async (scoutId: number) => {
-  const scout = await db.query.users.findFirst({ where: eq(users.id, scoutId) })
+async function getScoutById(scoutId: number) {
+  const scout = await db.query.users.findFirst({ where: eq(users.id, scoutId) });
   return scout;
 }
 
@@ -24,10 +24,10 @@ export const listCommentsForScout: ScoutingAppRouteHandler<ListCommentsForScoutR
   if (!findScoutResponse) {
     return c.json({
       message: "Scout not found",
-    }, HttpStatusCodes.NOT_FOUND)
+    }, HttpStatusCodes.NOT_FOUND);
   }
 
   const comments = await db.query.matchComments.findMany({ where: eq(matchComments.scoutId, scoutId) });
 
-  return c.json(comments, HttpStatusCodes.OK)
+  return c.json(comments, HttpStatusCodes.OK);
 };

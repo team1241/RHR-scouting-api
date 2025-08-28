@@ -5,9 +5,6 @@
     "jsxImportSource": "hono/jsx",
     "baseUrl": ".",
     "module": "nodenext",
-    "paths": {
-      "~/*": ["./src/*"]
-    },
     "resolveJsonModule": true,
     "types": [
       "node"

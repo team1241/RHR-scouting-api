@@ -1,9 +1,9 @@
 import { createRoute } from "@hono/zod-openapi";
+import { fieldImageType } from "src/db/schema.js";
+import { notFoundSchema } from "src/lib/constants.js";
 import * as HttpStatusCodes from "stoker/http-status-codes";
 import { jsonContent } from "stoker/openapi/helpers";
 import { z } from "zod";
-import { fieldImageType } from "~/db/schema.js";
-import { notFoundSchema } from "~/lib/constants.js";
 
 const tags = ["Images"];
 
